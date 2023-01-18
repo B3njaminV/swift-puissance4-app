@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC5CF2812977F585004DFB63 /* puissance4 in Frameworks */ = {isa = PBXBuildFile; productRef = EC5CF2802977F585004DFB63 /* puissance4 */; };
 		ECDF60C829768B8000CE6BF2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDF60C729768B8000CE6BF2 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,17 +33,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5CF2812977F585004DFB63 /* puissance4 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC5CF27F2977F585004DFB63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ECDF60BB29768B8000CE6BF2 = {
 			isa = PBXGroup;
 			children = (
 				ECDF60C629768B8000CE6BF2 /* CLT */,
 				ECDF60C529768B8000CE6BF2 /* Products */,
+				EC5CF27F2977F585004DFB63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +88,9 @@
 			dependencies = (
 			);
 			name = CLT;
+			packageProductDependencies = (
+				EC5CF2802977F585004DFB63 /* puissance4 */,
+			);
 			productName = CLT;
 			productReference = ECDF60C429768B8000CE6BF2 /* CLT */;
 			productType = "com.apple.product-type.tool";
@@ -280,6 +293,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC5CF2802977F585004DFB63 /* puissance4 */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = puissance4;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ECDF60BC29768B8000CE6BF2 /* Project object */;
 }
