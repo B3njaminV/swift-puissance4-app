@@ -18,7 +18,7 @@ func insertPiece(id:Int, column:Int, b: inout Board)
         case .columnFull:
             print("Column \(column) is full")
         case .boardFull:
-            print("Board \(columnà) is full")
+            print("Board \(column) is full")
         case .unknown:
             print("Unknown")
         }
