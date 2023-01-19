@@ -4,13 +4,13 @@
 
 import Foundation
 
-enum BoardResult {
+public enum BoardResult {
     case unknown
     case ok
     case failed(FailedReason)
 }
 
-enum FailedReason {
+public enum FailedReason {
     case unknown
     case columnFull
     case boardFull

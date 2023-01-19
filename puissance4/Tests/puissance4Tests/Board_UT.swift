@@ -4,14 +4,14 @@ import XCTest
 final class Board_UT: XCTestCase {
     func testinit() throws {
         func expect(nbRows : Int, nbColums : Int, notNil : Bool){
-            let board = Board(nbR: 6, nbC: 7)
+            let board = Board(nbR: nbRows, nbC: nbColums)
             if !notNil{
                 XCTAssertNil(board)
                 return
             }
             XCTAssertNotNil(board)
-            XCTAssertEqual(board?.nbRows, 6)
-            XCTAssertEqual(board?.nbColums, 7)
+            XCTAssertEqual(board?.nbRows, nbRows)
+            XCTAssertEqual(board?.nbColums, nbColums)
         }
         expect(nbRows: 6, nbColums: 7, notNil: true)
         expect(nbRows: 0, nbColums: 7, notNil: false)

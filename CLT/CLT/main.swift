@@ -8,8 +8,8 @@
 import Foundation
 import puissance4
 
-func insertPiece(id:Int, column:Int, b: inout Board)
-    let result = board.insertPiece(id: id, column: column)
+func insertPiece(id:Int, column:Int, b: inout Board){
+    let result = b.insertPiece(id: id, column: column)
     switch result{
     case .ok:
         print("OK")
@@ -26,11 +26,10 @@ func insertPiece(id:Int, column:Int, b: inout Board)
         print("Rien")
     }
 }
-if var board = Board(withGrid: [[1,2,1], [2,1,nil], [nil,nil,nil]]){
+if var board = Board(withGrid: [[nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil]]){
     print(board)
-    insertPiece(id: 1, column: 0, &board)
-    insertPiece(id: 1, column: 0, &board)
-    insertPiece(id: 1, column: 0, &board)
-    insertPiece(id: 1, column: 0, &board)
-    insertPiece(id: 1, column: 0, &board)
+    insertPiece(id: 1, column: 1, b: &board)
+    insertPiece(id: 1, column: 2, b: &board)
+    insertPiece(id: 2, column: 4, b: &board)
+    print(board)
 }
