@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c020d6b2-7388-4cb9-956f-97cda4db6ea0" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/puissance4/Sources/puissance4/Human.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/puissance4/Sources/puissance4/Rules.swift" afterDir="false" />
+    <list default="true" id="c020d6b2-7388-4cb9-956f-97cda4db6ea0" name="Changes" comment="Ajout classe player + human&#10;&gt; Ajout des règles de jeu&#10;&gt; Modif fonction Board + ajout test unitaire sur Board&#10;&gt; (a finir) : tester l'insertion + ajouter le système de joueur">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CLT/CLT/main.swift" beforeDir="false" afterPath="$PROJECT_DIR$/CLT/CLT/main.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/puissance4/Sources/puissance4/Board.swift" beforeDir="false" afterPath="$PROJECT_DIR$/puissance4/Sources/puissance4/Board.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puissance4/Sources/puissance4/BoardResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/puissance4/Sources/puissance4/BoardResult.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puissance4/Sources/puissance4/Player.swift" beforeDir="false" afterPath="$PROJECT_DIR$/puissance4/Sources/puissance4/Player.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/puissance4/Tests/puissance4Tests/Board_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/puissance4/Tests/puissance4Tests/Board_UT.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +43,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
-  <component name="RunManager" selected="Swift Package Test.Board_UT">
+  <component name="RunManager" selected="Application.CLT">
     <configuration name="CLT" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CLT" TARGET_NAME="CLT" CONFIG_NAME="Debug" IS_LOCATION_SIMULATION_SUPPORTED="false" SCHEME_NAME="CLT" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="CLT" RUN_TARGET_NAME="CLT" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
@@ -124,7 +118,8 @@
       <workItem from="1674484790304" duration="4000" />
       <workItem from="1674638478419" duration="13000" />
       <workItem from="1674926783169" duration="461000" />
-      <workItem from="1674927527815" duration="1404000" />
+      <workItem from="1674927527815" duration="1483000" />
+      <workItem from="1674934745283" duration="268000" />
     </task>
     <task id="LOCAL-00001" summary="Avance Board + ut">
       <created>1674039747754</created>
@@ -147,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674138021682</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajout classe player + human&#10;&gt; Ajout des règles de jeu&#10;&gt; Modif fonction Board + ajout test unitaire sur Board&#10;&gt; (a finir) : tester l'insertion + ajouter le système de joueur">
+      <created>1674929000602</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674929000602</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +159,8 @@
     <MESSAGE value="Avance Board + ut" />
     <MESSAGE value="correction main" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="Ajout classe player + human&#10;&gt; Ajout des règles de jeu&#10;&gt; Modif fonction Board + ajout test unitaire sur Board&#10;&gt; (a finir) : tester l'insertion + ajouter le système de joueur" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout classe player + human&#10;&gt; Ajout des règles de jeu&#10;&gt; Modif fonction Board + ajout test unitaire sur Board&#10;&gt; (a finir) : tester l'insertion + ajouter le système de joueur" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="CidrCoverage/SwiftProjects/CLT.json" NAME="CLT Coverage Results" MODIFIED="1674037688752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="llvm-cov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

@@ -17,9 +17,9 @@ public struct Board : CustomStringConvertible{
         */
         for row in grid{
             for cell in row {
-                string.append("\(String(describing: Board.descriptionMapper[cell] ?? "-")) ")
+                string.append("│ \(String(describing: Board.descriptionMapper[cell] ?? "-")) ")
             }
-            string.append("\n")
+            string.append("│\n")
         }
         return string
     }
