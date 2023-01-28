@@ -1,35 +1,40 @@
-//
-//  main.swift
-//  CLT
-//
-//  Created by Benjamin on 16/01/2023.
-//
-
 import Foundation
 import puissance4
 
-func insertPiece(id:Int, column:Int, b: inout Board){
+func insertPieceInBoard(id:Int, column:Int, b: inout Board){
     let result = b.insertPiece(id: id, column: column)
     switch result{
     case .ok:
         print("OK")
     case .failed(let reason):
-        switch reason{
+        switch (reason){
         case .columnFull:
             print("Column \(column) is full")
         case .boardFull:
-            print("Board \(column) is full")
+            print("Board is full")
+        case .columnNil:
+            print("Column \(column) is nil")
+        case .outOfBounds:
+            print("Column \(column) is out of bounds")
         case .unknown:
             print("Unknown")
         }
     default:
-        print("Rien")
+        print("Other")
     }
 }
-if var board = Board(withGrid: [[nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil]]){
-    print(board)
-    insertPiece(id: 1, column: 1, b: &board)
-    insertPiece(id: 1, column: 2, b: &board)
-    insertPiece(id: 2, column: 4, b: &board)
+
+if var board = Board(nbR: 6, nbC: 7){
+    insertPieceInBoard(id: 1, column: 1, b: &board)
+    insertPieceInBoard(id: 2, column: 2, b: &board)
+    insertPieceInBoard(id: 1, column: 2, b: &board)
+    insertPieceInBoard(id: 2, column: 1, b: &board)
+    insertPieceInBoard(id: 2, column: 2, b: &board)
+    insertPieceInBoard(id: 2, column: 0, b: &board)
+    insertPieceInBoard(id: 2, column: 3, b: &board)
+    insertPieceInBoard(id: 1, column: 3, b: &board)
+    insertPieceInBoard(id: 2, column: 3, b: &board)
+    insertPieceInBoard(id: 2, column: 3, b: &board)
     print(board)
 }
+

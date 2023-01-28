@@ -1,7 +1,3 @@
-//
-// Created by etudiant on 18/01/2023.
-//
-
 import Foundation
 
 public enum BoardResult {
@@ -12,6 +8,8 @@ public enum BoardResult {
 
 public enum FailedReason {
     case unknown
+    case columnNil
+    case outOfBounds
     case columnFull
     case boardFull
 }
