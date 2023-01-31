@@ -25,7 +25,6 @@ Application Swift reposant sur le jeu du Puissance 4 en application console
 * GitHub: [@B3njaminV](https://github.com/B3njaminV)
 * LinkedIn: [@Benjamin VALLEIX](https://www.linkedin.com/in/benjamin-valleix-27115719a)
 
-
 ## 📝 License
 
 Copyright © 2023
