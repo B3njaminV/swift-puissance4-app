@@ -29,7 +29,6 @@ Application Swift reposant sur le jeu du Puissance 4 en application console
 
 Copyright © 2023
 
-
 ## 🛠 Languages & Tools
 
 <p> 
