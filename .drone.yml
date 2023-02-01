@@ -19,4 +19,3 @@ steps:
       - cd Sources/puissance4
       - swift test
     depends_on: [build]
-    
