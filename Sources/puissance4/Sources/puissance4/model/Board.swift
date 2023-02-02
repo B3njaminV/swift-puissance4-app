@@ -92,7 +92,7 @@ public struct Board : CustomStringConvertible{
                 return insertPiece(id: id, row: i, column: column)
             }
         }
-        return .ok
+        return .failed(.unknown)
     }
 
     public mutating func removePiece(id:Int, row:Int, column:Int) -> Bool {
@@ -104,5 +104,26 @@ public struct Board : CustomStringConvertible{
         }
         grid[row][column] = nil
         return true
+    }
+
+    public mutating func clearColumn(column:Int) -> Bool {
+        guard column >= 0 && column < nbColums else{
+            return false
+        }
+        for row in 0..<nbRows{
+            grid[row][column] = nil
+        }
+        return true
+    }
+
+    public mutating func clearBoard() -> Bool {
+        for column in 0..<nbColums{
+            clearColumn(column: column)
+        }
+        return true
+    }
+
+    public func getGrid() -> [[Int?]]{
+        return grid
     }
 }
