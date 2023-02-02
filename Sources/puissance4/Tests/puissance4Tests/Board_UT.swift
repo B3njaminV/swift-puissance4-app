@@ -30,18 +30,17 @@ final class Board_UT: XCTestCase {
             XCTAssertEqual(board?.nbRows, board?.grid.count)
             XCTAssertEqual(board?.nbColums, board?.grid[0].count)
         }
-        expect(grid: [], notNil: false)
-        expect(grid: [[], []], notNil: false)
-        expect(grid: [[nil, nil, nil], [nil, nil, nil], [nil, 1, 2]], notNil: false)
+        expect(grid: [[], []], notNil: true)
+        expect(grid: [[nil, nil, nil], [nil, nil, nil], [nil, 1, 2]], notNil: true)
     }
 
     func testFull() throws {
         func expect(grid : [[Int?]], notNil : Bool){
             let board = Board(withGrid: grid)
             if !notNil {
-                XCTAssertFalse(board!.isFull())
-            } else {
                 XCTAssertTrue(board!.isFull())
+            } else {
+                XCTAssertFalse(board!.isFull())
             }
         }
         expect(grid: [[1, 1, 2], [2, 2, 1], [2, 1, 2]], notNil: false)

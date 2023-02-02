@@ -52,8 +52,8 @@ public struct Board : CustomStringConvertible{
         guard result else{
             return nil
         }
-        nbRows=grid.count
-        nbColums=grid[0].count
+        nbRows = grid.count
+        nbColums = grid[0].count
         self.grid=grid
     }
 
