@@ -1,6 +1,7 @@
 import Foundation
 import puissance4
 
+/*
 func insertPieceInBoard(id:Int, column:Int, b: inout Board){
     let result = b.insertPiece(id: id, column: column)
     switch result{
@@ -36,5 +37,23 @@ if var board = Board(nbR: 6, nbC: 7){
     insertPieceInBoard(id: 2, column: 3, b: &board)
     insertPieceInBoard(id: 2, column: 3, b: &board)
     print(board)
+}
+ */
+
+let lecteur = Lecteur()
+let afficheur = Afficheur()
+
+if var board = Board(nbR: 6, nbC: 8){
+    let player1 = Human(withId: 1, andName: "Joueur1", playIn: board, andReadWith: lecteur)
+    let player2 = Human(withId: 2, andName: "Joueur2", playIn: board, andReadWith: lecteur)
+    
+    var game = Game(withBoard: board, playWith: [player1, player2], display: afficheur)
+    
+    var winner : Player?
+    while game?.getWinner() == nil {
+        game?.tour()
+    }
+    
+    afficheur.afficher(withTxt: "Gagnant : \(String(describing: winner?.name) )")
 }
 
