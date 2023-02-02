@@ -15,7 +15,7 @@ public struct Game {
     }
     
     public mutating func tour(){
-        var playerCourant = players[numeroJoueur]
+        let playerCourant = players[numeroJoueur]
         var boardResult = BoardResult.unknown
         while(boardResult != BoardResult.ok){
             afficheur.afficher(withTxt: "\(playerCourant.name) -> Colonne :")
