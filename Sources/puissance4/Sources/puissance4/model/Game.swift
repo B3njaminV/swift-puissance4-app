@@ -4,7 +4,7 @@ public struct Game {
     
     private var board: Board
     private var players: [Player]   // tableau de players
-    private var numeroJoueur: Int = 0
+    public var numeroJoueur: Int = 0
     private var afficheur: Afficheur
     private var winner: Player?
     
@@ -32,4 +32,10 @@ public struct Game {
     public func getWinner() -> Player? {
         return winner;
     }
+
+    public func getNumeroJoueurActif() -> Int {
+        return numeroJoueur;
+    }
+
+
 }
