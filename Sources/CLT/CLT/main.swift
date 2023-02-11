@@ -63,7 +63,6 @@ if var board = Board(nbR: 6, nbC: 8){
         game = Game(withBoard: &board, playWith: [player1, IA(withId: 2, andName: "IA", playIn: board)], display: afficheur, andRules: regle!)
     }
 
-    var winner : Player?
     while game?.getWinner() == nil {
         game?.tour()
     }

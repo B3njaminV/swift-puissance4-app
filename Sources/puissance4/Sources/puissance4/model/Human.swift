@@ -15,7 +15,7 @@ public class Human : Player {
     }
     
     public func play() -> Int {
-        lecteur.lireEntier() ?? -1
+        lecteur.lireEntier() ?? 0
     }
     
     

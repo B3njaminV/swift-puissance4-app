@@ -21,6 +21,11 @@ public struct Board : CustomStringConvertible{
             }
             string.append("│\n")
         }
+        for c in 0..<nbColums {
+            if(c != 0) {string.append("--")}
+            else {string.append("  ")}
+            string.append(" \(String(c)) ")
+        }
         return string
     }
 
@@ -48,7 +53,6 @@ public struct Board : CustomStringConvertible{
         let result = sizes.allSatisfy{
             $0 == grid[0].count
         }
-        // prédicat = retourne un booléen
         guard result else{
             return nil
         }
@@ -87,7 +91,10 @@ public struct Board : CustomStringConvertible{
     }
 
     public mutating func insertPiece(id:Int, column:Int) -> BoardResult{
-        for i in 0...nbRows {
+        guard(column < nbColums) else{
+            return .failed(.columnNil)
+        }
+        for i in 0...nbRows-1 {
             if grid[i][column] == nil {
                 return insertPiece(id: id, row: i, column: column)
             }
@@ -106,24 +113,7 @@ public struct Board : CustomStringConvertible{
         return true
     }
 
-    public mutating func clearColumn(column:Int) -> Bool {
-        guard column >= 0 && column < nbColums else{
-            return false
-        }
-        for row in 0..<nbRows{
-            grid[row][column] = nil
-        }
-        return true
-    }
-
-    public mutating func clearBoard() -> Bool {
-        for column in 0..<nbColums{
-            clearColumn(column: column)
-        }
-        return true
-    }
-
     public func getGrid() -> [[Int?]]{
-        return grid
+        grid
     }
 }
