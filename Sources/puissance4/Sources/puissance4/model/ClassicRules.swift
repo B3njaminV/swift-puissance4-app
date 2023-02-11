@@ -8,12 +8,20 @@ public class ClassicRules : Rules {
 
     public static var nbToWin: Int = 4
 
+    /// Initialise les règles du jeu
+    /// - Parameter board:
+    ///  - Board : tableau de jeu
     public init?(inBoard board : inout Board) {
         guard board.nbRows >= ClassicRules.minRow && board.nbColums >= ClassicRules.minCol else {
             return nil
         }
     }
 
+    /// Vérifie si un joueur a gagné
+    /// - Parameter board:
+    /// - Board : tableau de jeu
+    /// - Returns:
+    /// - Bool : true si un joueur a gagné
     public func verifGagnant(in board: inout Board) -> Bool {
         var nbJetonsAlignes = 0
         var jeton = 0
@@ -55,10 +63,4 @@ public class ClassicRules : Rules {
         }
         return false
     }
-
-    public func gameOver(in board: inout Board) -> Bool {
-        board.isFull()
-    }
-
-
 }

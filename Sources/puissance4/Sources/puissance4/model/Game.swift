@@ -21,7 +21,8 @@ public struct Game {
         self.afficheur = afficheur
         self.rules = rules
     }
-    
+
+    /// Joue un tour
     public mutating func tour(){
         let playerCourant = players[numeroJoueur]
         var boardResult = BoardResult.unknown
@@ -35,19 +36,23 @@ public struct Game {
         checkGagnant(isWin: win)
         joueurSuivant()
     }
-        
+
+    /// Change le joueur actif
     public mutating func joueurSuivant() {
         numeroJoueur = (numeroJoueur + 1) % players.count
     }
-        
+
+    /// Retourne le joueur gagnant
     public func getWinner() -> Player? {
         winner;
     }
 
+    /// Retourne le numéro du joueur actif
     public func getNumeroJoueurActif() -> Int {
         numeroJoueur;
     }
-    
+
+    /// Permet de mettre à jour le gagnant suivant la vérif des règles
     public mutating func checkGagnant(isWin win : Bool) {
         if win {
             winner = players[numeroJoueur]
