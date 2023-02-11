@@ -24,14 +24,14 @@ Application Swift reposant sur le jeu du Puissance 4 en application console
 git clone https://codefirst.iut.uca.fr/git/benjamin.valleix/swift-puissance4-app.git
 ```
 
-## 📍 Build
+## 👷 Build
 
 ```
 cd Sources/puissance4
 swift build
 ```
 
-## 📍 TEst
+## ⚡️ TEst
 
 ```
 cd Sources/puissance4
