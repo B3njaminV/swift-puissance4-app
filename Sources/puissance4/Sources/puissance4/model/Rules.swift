@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Rules {
+public protocol Rules {
     
     static var minRow: Int { get }
     static var minCol: Int { get }

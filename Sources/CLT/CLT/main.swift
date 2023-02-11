@@ -43,32 +43,29 @@ if var board = Board(nbR: 6, nbC: 7){
 let lecteur = Lecteur()
 let afficheur = Afficheur()
 
-if let board = Board(nbR: 6, nbC: 8){
+if var board = Board(nbR: 6, nbC: 8){
     let player1 = Human(withId: 1, andName: "Joueur 1", playIn: board, andReadWith: lecteur)
     let player2 = Human(withId: 2, andName: "Joueur 2", playIn: board, andReadWith: lecteur)
-    var game : Game
+    var game : Game?
 
     var partie = 0
-    while (partie != 1 || partie != 2){
+    while (partie != 1 && partie != 2){
         afficheur.afficher(withTxt: "Tapez 1 pour jouer avec un ami sinon 2 pour jouer avec une IA")
         partie = lecteur.lireEntier() ?? -1
     }
     afficheur.afficher(withTxt: "Vous avez choisi de jouer contre un \(partie == 1 ? "ami" : "IA")")
 
+    let regle = ClassicRules(inBoard: &board)
+
     if partie == 1 {
-        game = Game(withBoard: board, playWith: [player1, player2], display: afficheur)!
+        game = Game(withBoard: &board, playWith: [player1, player2], display: afficheur, andRules: regle!)
     } else {
-        game = Game(withBoard: board, playWith: [player1, IA(withId: 2, andName: "IA", playIn: board)], display: afficheur)!
+        game = Game(withBoard: &board, playWith: [player1, IA(withId: 2, andName: "IA", playIn: board)], display: afficheur, andRules: regle!)
     }
-
-    //let regle = ClassicRules(inBoard: &board)
-
 
     var winner : Player?
-    while game.getWinner() == nil {
-        game.tour()
+    while game?.getWinner() == nil {
+        game?.tour()
     }
-
-    afficheur.afficher(withTxt: "Gagnant : \(String(describing: winner!.name) )")
 }
 

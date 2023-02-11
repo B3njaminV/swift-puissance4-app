@@ -4,17 +4,17 @@ public class ClassicRules : Rules {
 
     public static var minRow: Int = 6
 
-    static var minCol: Int = 5
+    public static var minCol: Int = 5
 
-    static var nbToWin: Int = 4
+    public static var nbToWin: Int = 4
 
     public init?(inBoard board : inout Board) {
-        if(board.nbRows >= ClassicRules.minRow && board.nbColums >= ClassicRules.minCol){
+        guard board.nbRows >= ClassicRules.minRow && board.nbColums >= ClassicRules.minCol else {
             return nil
         }
     }
 
-    func verifGagnant(in board: inout Board) -> Bool {
+    public func verifGagnant(in board: inout Board) -> Bool {
         var nbJetonsAlignes = 0
         var jeton = 0
         for column in 0..<board.nbColums{
@@ -37,7 +37,7 @@ public class ClassicRules : Rules {
         return false
     }
 
-    func gameOver(in board: inout Board) -> Bool {
+    public func gameOver(in board: inout Board) -> Bool {
         board.isFull()
     }
 

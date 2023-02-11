@@ -7,22 +7,33 @@ public struct Game {
     public var numeroJoueur: Int = 0
     private var afficheur: Afficheur
     private var winner: Player?
-    
-    public init?(withBoard board: Board, playWith players: [Player], display afficheur: Afficheur) {
+    private var rules : Rules
+
+    ///
+    /// - Parameters:
+    ///   - board: Board puissance 4
+    ///   - players: Tableau de joueurs
+    ///   - afficheur: Afficheur pour afficher les différents messages
+    ///   - rules: Règles appliquées au jeu
+    public init(withBoard board: inout Board, playWith players: [Player], display afficheur: Afficheur, andRules rules : Rules) {
         self.board = board
         self.players = players
         self.afficheur = afficheur
+        self.rules = rules
     }
     
     public mutating func tour(){
         let playerCourant = players[numeroJoueur]
         var boardResult = BoardResult.unknown
+        var win : Bool
         while(boardResult != BoardResult.ok){
             afficheur.afficher(withTxt: "\(playerCourant.name) -> Colonne :")
             boardResult = board.insertPiece(id: playerCourant.id, column: playerCourant.play())
         }
-        joueurSuivant();
+        win = rules.verifGagnant(in: &board)
         afficheur.afficher(withTxt: board.description)
+        checkGagnant(isWin: win)
+        joueurSuivant()
     }
         
     public mutating func joueurSuivant() {
@@ -30,12 +41,20 @@ public struct Game {
     }
         
     public func getWinner() -> Player? {
-        return winner;
+        winner;
     }
 
     public func getNumeroJoueurActif() -> Int {
-        return numeroJoueur;
+        numeroJoueur;
     }
+    
+    public mutating func checkGagnant(isWin win : Bool) {
+        if win {
+            winner = players[numeroJoueur]
+            afficheur.afficher(withTxt: "Gagnant : \(String(describing: winner!.name) )")
+        }
+    }
+
 
 
 }
