@@ -13,7 +13,7 @@
 
 ## 📣 Introduction
 Application Swift reposant sur le jeu du Puissance 4 en application console.
-Vous avez la possibilité de joueur avec un ami (2 joueur) ou une IA (1 joueur et une IA)
+- Vous avez la possibilité de joueur avec un ami (1 joueur VS 1 joueur) ou une IA (1 joueur VS 1 IA)
 
 ## 📍 Prerequisites
 
