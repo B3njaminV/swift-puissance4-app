@@ -31,7 +31,7 @@ cd Sources/puissance4
 swift build
 ```
 
-## ⚡️ TEst
+## ⚡️ Test
 
 ```
 cd Sources/puissance4
