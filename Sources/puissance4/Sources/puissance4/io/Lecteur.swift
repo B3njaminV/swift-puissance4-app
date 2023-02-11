@@ -2,9 +2,7 @@ import Foundation
 
 public class Lecteur {
     
-    public init() {
-        
-    }
+    public init() {}
     
     public func lireEntier() -> Int?{
         if let ligne = readLine() {
@@ -15,6 +13,6 @@ public class Lecteur {
     }
     
     public func lireString() -> String? {
-        return readLine()
+        readLine()
     }
 }

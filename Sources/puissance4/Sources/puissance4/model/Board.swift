@@ -3,7 +3,7 @@ public struct Board : CustomStringConvertible{
     public var grid : [[Int?]]
     public let nbRows : Int
     public let nbColums : Int
-    private static let descriptionMapper : [Int? : String] = [nil : "-", 1 : "X", 2 : "O"]
+    private static let descriptionMapper : [Int? : String] = [nil : "⚪", 1 : "🔴", 2 : "🟡"]
     
     public var description: String {
         var string = String()
@@ -15,7 +15,7 @@ public struct Board : CustomStringConvertible{
             string.append("\n")
         }
         */
-        for row in grid{
+        for row in grid.reversed(){
             for cell in row {
                 string.append("│ \(String(describing: Board.descriptionMapper[cell] ?? "-")) ")
             }
@@ -87,7 +87,7 @@ public struct Board : CustomStringConvertible{
     }
 
     public mutating func insertPiece(id:Int, column:Int) -> BoardResult{
-        for i in stride(from: nbRows - 1, through: 0, by: -1) {
+        for i in 0...nbRows {
             if grid[i][column] == nil {
                 return insertPiece(id: id, row: i, column: column)
             }
